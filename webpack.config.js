@@ -1,6 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const pkg = require("./package.json");
 
 const commitHash = require("child_process")
@@ -21,7 +21,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   optimization: {
-    minimizer: [new UglifyJsPlugin()],
+    minimizer: [new TerserPlugin({ extractComments: false })],
   },
   plugins: [new webpack.BannerPlugin({ banner })],
 };
