@@ -5,7 +5,9 @@
   "main": "src/vtl.js",
   "scripts": {
     "build": "webpack --mode=production",
-    "test": "prettier --check . && jest"
+    "format": "prettier --write .",
+    "lint": "prettier --check .",
+    "test": "yarn lint && jest"
   },
   "author": "jasmaa",
   "license": "Apache-2.0",
